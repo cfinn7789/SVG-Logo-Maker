@@ -3,6 +3,10 @@
   ## Description
   This is a node js application that will generate a logo as an SVG file.
 
+  ![Example image](./svglogo.png)
+
+  Link to video demonstration: https://drive.google.com/file/d/1oFPLu4w5ve3xE3N-bs1Am8oSOlTQkyj9/view
+
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
