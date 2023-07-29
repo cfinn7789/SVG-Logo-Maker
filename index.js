@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const fs = require('fs'); // fs is the file system
+const fs = require('fs');
 const {Triangle, Circle, Square} = require("./lib/shapes.js");
-
+// The questions that will be prompted when starting the application
 const questions = [
     {
         type: "input",
@@ -25,23 +25,16 @@ const questions = [
         message: "Please enter a color for the shape (use a keyword or a hexadecimal number): "
     }
 ];
-
+// This function writes data to the file system
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
     err ? console.error(err) : console.log("Successfully generated logo!"))
 }
-
+// This function sets up the application
 function init() {
     inquirer.prompt(questions)
       .then((answers) => {
-        let shapeType;
-            if (answers.shape === 'Circle') {
-                shapeType = Circle;
-            } else if (answers.shape === 'Triangle') {
-                shapeType = Triangle;
-            } else {
-                shapeType = Square;
-            }
+        let shapeType = answers.shape === 'Circle' ? Circle : answers.shape === 'Triangle' ? Triangle : Square;
   
         const logo = new shapeType(answers.text, answers.textcolor, answers.color);
         console.log(logo);
