@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs'); // fs is the file system
-const {Triangle, Circle, Square} = require("./lib/shapes");
+const {Triangle, Circle, Square} = require("./lib/shapes.js");
 
 const questions = [
     {
@@ -28,5 +28,5 @@ const questions = [
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
-    err ? console.error(err) : console.log('Successfully generated logo!')) //Shorthand version of an "if" statement
+    err ? console.error(err) : console.log('Successfully generated logo!'))
 }
